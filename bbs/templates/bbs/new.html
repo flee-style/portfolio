@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h1>paiza learning中</h1>
+<p>{{ message }}</p>
+
+<form action="{% url 'bbs:create' %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form articleForm layout='horizontal' %}
+    <button type="submit" class="btn btn-outline-primary">作成</button>
+    <a href="{% url 'bbs:index' %}" class="btn btn-outline-primary">戻る</a>
+</form>
+
+{% endblock %}

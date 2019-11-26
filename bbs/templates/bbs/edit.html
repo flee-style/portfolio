@@ -1,0 +1,12 @@
+{% extends './base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<form action="{% url 'bbs:update' article.id %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form articleForm layout='horizontal' %}
+    <button type="submit" class="btn btn-outline-primary">変更</button>
+</form>
+
+
+{% endblock %}
